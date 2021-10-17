@@ -2,7 +2,7 @@
 
 // Time complexity: O(n²)
 // Space complexity: O(1)
-
+const arr = [4, 5, 1, -3, 6]
 function findPair(arr, k){
   for(let i = 0; i < arr.length; i++){
     for(let j = i+1; j < arr.length; j++){
@@ -11,6 +11,7 @@ function findPair(arr, k){
   }
   return false;
 }
+findPair(arr, 7)
 
 
 # 1- Find pair that sums
