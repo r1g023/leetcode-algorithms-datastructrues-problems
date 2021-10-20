@@ -12,6 +12,8 @@ function firstRepeatingCharacter(str) {
   return "\0";
 }
 
+firstRepeatingCharacter("I'm a software Engineer");
+
 // 2- First repeating
 //  character
 //  Description
@@ -22,12 +24,15 @@ function firstRepeatingCharacter(str) {
 //  Example 1:
 //  • Input: str = "inside code"
 //  • Output: 'i'
+
 //  Example 2:
 //  • Input: str = "programming"
 //  • Output: 'r'
+
 //  Example 3:
 //  • Input: str = "abcd"
 //  • Output: '\0'
+
 //  Example 4:
 //  • Input: str = "abba"
 //  • Output: 'b'
