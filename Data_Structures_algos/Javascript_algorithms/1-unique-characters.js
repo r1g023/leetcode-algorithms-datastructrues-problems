@@ -1,9 +1,10 @@
 // var listOfCities = [ "nashville", "nashville", "los angeles", "nashville", "memphis", "barcelona", "sevillia", "isla canary", "barcelona", ];
-// //FIRST METHOD/
-// // return a count of the distinct duplicates ( not the times an entry is repeated ) entries in the list above. You can run your code by pressing the aqua colored "Run" button above left.
+
+// ? FIRST METHOD  BASED ON A COMPANY CODING CHALLENGE - MY SOLUTION
+// return a count of the distinct duplicates ( not the times an entry is repeated ) entries in the list above. You can run your code by pressing the aqua colored "Run" button above left.
 // function countDuplicatesInList(cityList) {
 //   var count = 0;
-//   // fill in code here
+// fill in code here
 //   var dupCities = {};
 //   var arrCount;
 //   for (let i = 0; i < cityList.length; i++) {
@@ -30,26 +31,46 @@
 // }
 
 // main(); // failed :( count = 3
-// //time and space complexit of countDuplicatesInList is O(n)
+// * time and space complexit of countDuplicatesInList is O(n)
 
 //create a function that determines wether all characters in a string are uique or not. Make it case-sensitive, meaning a string with both 'a' and 'A' could pass the test.
 
 //Input: String
 //Output: Boolean
-function isUnique(str) {
-  for (let i = 0; i < str.length; i++) {
-    // O(n)
-    if (str.lastIndexOf(str[i]) !== i) {
-      // O(n)
+
+// ? SECOND Method with lastIndexOf method
+// function isUnique(str) {
+//   for (let i = 0; i < str.length; i++) {
+// O(n)
+//     if (str.lastIndexOf(str[i]) !== i) {
+// O(n)
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isUnique("abcde"));
+// * Time O(n * n) -> O(n^2)
+// * Space O(1)
+
+// ? THIRD METHOD with sorting the string
+function isUniqueSorted(str) {
+  const chars = str.split("").sort();
+  console.log(chars); // [ 'a', 'a', 'b', 'c', 'd', 'e' ]
+  for (let i = 0; i < chars.length; i++) {
+    if (chars.indexOf(chars[i]) !== i) {
       return false;
     }
   }
   return true;
 }
 
-console.log(isUnique("abcde"));
-// * Time O(n * n) -> O(n^2)
-// * Space O(1)
-// ? What is the time complexity of this algorithm?
+console.log(
+  "Expected: False",
+  isUniqueSorted("sortedDuppliccate"),
+  "Expected: True",
+  isUniqueSorted("sortedDupplicate")
+);
 
 //isUnique('89%df#s*a&x'), isUnique('abcadef'), isUnique('isuniqque')
