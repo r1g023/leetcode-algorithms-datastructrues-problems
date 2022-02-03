@@ -1,3 +1,4 @@
+// ? Method 1
 const employee = {
   id: 007,
   alias: "jAMES",
@@ -47,3 +48,37 @@ const users = [
   { username: "john", age: 99 },
   { username: "jane", age: 98 },
 ];
+
+for (let { username, age } of users) {
+  console.log(username, age); // prints out key value pairs of each object
+}
+
+// * SCOPES *
+// block scope, let and var are accessible within the block
+{
+  var user = "james";
+  let user1 = "john";
+  const user2 = "jane";
+}
+
+console.log(user, user1);
+
+// function scope, variables are not accessible
+function userScope() {
+  var user3 = "jack";
+  let user4 = "frost";
+  const user5 = "doe";
+}
+userScope();
+
+// global scope
+let user6 = "jamie";
+function globalScope() {
+  console.log(user6, user, user1); //variables are accessible
+}
+globalScope();
+
+// object reassignment
+let blog = {
+  url: "google.com",
+};
