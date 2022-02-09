@@ -2,6 +2,7 @@
 const employee = {
   id: 007,
   alias: "jAMES",
+  power: true,
   dept: {
     id: "D1",
     dept_name: "spy",
@@ -9,38 +10,54 @@ const employee = {
   },
 };
 
-const { alias: name } = employee;
+const { alias: names } = employee;
+const { id: userID } = employee;
+const { power: userPopwer } = employee;
+const {
+  dept: { address: deptAddress },
+} = employee;
+console.log(userID, userPopwer);
+console.log(deptAddress);
+
+// DESTRUCTURING OBJECTS
 const {
   dept: { address },
 } = employee;
+
 const {
   dept: {
     address: { city },
   },
 } = employee;
+
 const {
   dept: { dept_name },
 } = employee;
 
-console.log(name);
+console.log(names);
 console.log(address); // { street: '30 london st', city: 'Chelsea' }
 console.log(city); //Chelsea
 console.log(dept_name); //Spy
 
 // ? Method 2
-function logAgent({ alias, dept }) {
-  console.log(alias, dept);
+function logAgent({ alias, power }) {
+  console.log(alias, power);
 }
 
-logAgent(employee);
+console.log(logAgent(employee));
 
 // ? Method 3
 function getUser() {
   return { username: "james", age: 100 };
 }
-
 const { age, username } = getUser();
 console.log(username, age); // james, 100
+
+function getLocation() {
+  return { place: "atlantis", location: "north" };
+}
+const { place, location } = getLocation();
+console.log(place); //atlantis, north
 
 // ? Method 4 - destruture an array of objects wiht a for loop
 const users = [
@@ -50,7 +67,7 @@ const users = [
 ];
 
 for (let { username, age } of users) {
-  console.log(username, age); // prints out key value pairs of each object
+  console.log([username, age]); // prints out key value pairs of each object
 }
 
 // * SCOPES *
@@ -91,7 +108,7 @@ let blog = {
 
   let artists = ["John", "zeonardo", "charles", "Anna", "Barent"];
 
-  artists.sort(); // ? ['Barent', 'Charles', 'John', 'Anna', 'zeonardo']
+  console.log(artists.sort()); //[ 'Anna', 'Barent', 'John', 'charles', 'zeonardo' ]
   artists.sort(function (a, b) {
     if (a > b) {
       return -1;
@@ -107,8 +124,8 @@ let blog = {
 // ? Sorting numbers
 {
   let ages = [2, 1000, 10, 3, 23, 12, 30, 21];
-
-  ages.sort(); //  [2, 3, 10, 12, 21, 23, 30, 1000]
+  console.log(ages);
+  ages.sort(); // [ 10, 1000, 12, 2, 21, 23, 3, 30 ]
   console.log(ages); // [ 10, 1000, 12, 2, 21, 23, 3, 30 ]
 
   // * function(a,b) {return a-b} ascending
@@ -116,6 +133,7 @@ let blog = {
     return a - b;
   });
   console.log(ages); // [2, 3, 10, 12, 21, 23, 30, 1000]
+  //same in ascending order
   ages.sort((a, b) => a - b);
 
   // * function(a,b) {return b-a} descending
@@ -141,13 +159,8 @@ let blog = {
   let users = [
     { name: "Bob", address: "Huston", dob: "February 9, 1991", income: 87654 },
     { name: "Joe", address: "London", dob: "July 1, 1986", income: 47974 },
-    {
-      name: "Carl",
-      address: "Bangalore",
-      dob: "December 25, 1982",
-      income: 97351,
-    },
-    { name: "Bob", address: "Lagos", dob: "March 19, 2001", income: 57753 },
+    { name: "Carl", address: "Bangalore", dob: "Dec 25, 1982", income: 97351 },
+    { name: "Carl", address: "Lagos", dob: "March 19, 2001", income: 57753 },
   ];
   // console.table(users);
 
@@ -157,11 +170,13 @@ let blog = {
     let left = a.name;
     let right = b.name;
 
-    // return left === right ? 0 : left > right ? 1 : -1;
+    // ? shorter way
+    // ******************************** return left === right ? 0 : left > right ? 1 : -1;
     if (left === right) {
       console.log(0);
-      return "zero " + 0;
-    } else if (left > right) {
+      return 0;
+    } else if (left < right) {
+      // * left > right ASCENDING || left < right DESCENDING!
       console.log(1, left, right);
       return 1;
     }
