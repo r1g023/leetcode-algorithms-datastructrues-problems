@@ -40,7 +40,7 @@ function countDuplicatesInList(cityList) {
 // ? SECOND Method with lastIndexOf method
  function isUnique(str) {
    for (let i = 0; i < str.length; i++) {
- O(n)
+// O(n)
      if (str.lastIndexOf(str[i]) !== i) {
 // O(n)
        return false;
