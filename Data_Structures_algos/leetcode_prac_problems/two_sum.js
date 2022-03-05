@@ -15,11 +15,13 @@ function twoSum(nums, target) {
       if (nums[i] + nums[j] === target) result.push(i, j);
     }
   }
-  console.log(result); // [0, 1]
+  console.log(result);
+  // [0, 1], because 0 and 1 are the indices of the numbers that sum to target 9
   return result;
 }
 //Time and Space Complexity: O(n^2)
 let nums = [2, 7, 11, 15];
 twoSum(nums, 9);
 
-//Optimized Solution
+//Optimized Solution for twoSum
+//function to add two numbers together
