@@ -1,0 +1,23 @@
+{
+  "name": "leetcode-algorithms-datastructrues-problems",
+  "version": "1.0.0",
+  "description": "general coding practice for algorithms, data structures, divide and conquer, memorization, backstrings, etc..",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rigo0523/leetcode-algorithms-datastructrues-problems.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rigo0523/leetcode-algorithms-datastructrues-problems/issues"
+  },
+  "homepage": "https://github.com/rigo0523/leetcode-algorithms-datastructrues-problems#readme"
+}
