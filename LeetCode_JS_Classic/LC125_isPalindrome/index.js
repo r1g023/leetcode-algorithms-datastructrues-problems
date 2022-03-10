@@ -31,6 +31,7 @@
 //   If Left char is not equal to Right char, return false
 // Return true
 
+// ? Optimized Solution
 function isPalindrome(s) {
   //sanitize the string, use regex to grab all non-alphanumerical characters, such as underscores, spaces, exclaimation points, etc.
   s = s.toLowerCase().replace(/[\W_]/g, "");
@@ -39,11 +40,15 @@ function isPalindrome(s) {
   console.log(right, s);
 
   while (left < right) {
+    console.log(left, s[left]);
+    console.log(right, s[right]);
     if (s[left] !== s[right]) {
       return false;
     }
     left++;
+    //left = left + 1
     right--;
+    //right = right - 1
   }
   return true;
 }
