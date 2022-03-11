@@ -37,18 +37,13 @@ function isPalindrome(s) {
   s = s.toLowerCase().replace(/[\W_]/g, "");
   let left = 0;
   let right = s.length - 1;
-  console.log(right, s);
-
+  console.log(right);
   while (left < right) {
     console.log(left, s[left]);
     console.log(right, s[right]);
-    if (s[left] !== s[right]) {
-      return false;
-    }
+    if (s[left] !== s[right]) return false;
     left++;
-    //left = left + 1
     right--;
-    //right = right - 1
   }
   return true;
 }
@@ -59,3 +54,21 @@ function isPalindrome(s) {
 console.log(isPalindrome("race car")); //true
 
 module.exports = isPalindrome;
+
+// s = s.toLowerCase().replace(/[\W_]/g, "");
+// let left = 0;
+// let right = s.length - 1;
+// console.log(right, s);
+
+// while (left < right) {
+//   console.log(left, s[left]);
+//   console.log(right, s[right]);
+//   if (s[left] !== s[right]) {
+//     return false;
+//   }
+//   left++;
+//   //left = left + 1
+//   right--;
+//   //right = right - 1
+// }
+// return true;
