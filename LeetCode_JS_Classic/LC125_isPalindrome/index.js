@@ -33,42 +33,29 @@
 
 // ? Optimized Solution
 function isPalindrome(s) {
-  //sanitize the string, use regex to grab all non-alphanumerical characters, such as underscores, spaces, exclaimation points, etc.
+  //sanitize the string, use regex to grab all non-alphanumerical characters, such as underscores, spaces, exclamation points, etc.
   s = s.toLowerCase().replace(/[\W_]/g, "");
+
+  //create a left and right pointer, initially at start and end of input string.
   let left = 0;
   let right = s.length - 1;
-  console.log(right);
+  //while left less than right
+
   while (left < right) {
-    console.log(left, s[left]);
-    console.log(right, s[right]);
+    //if left char is not equal to right char, return false
+    console.log("left:", left, s[left]);
+    console.log("right:", right, s[right]);
     if (s[left] !== s[right]) return false;
-    left++;
-    right--;
+    left++; //increment left pointer
+    right--; //decrement right pointer
   }
+  console.log(s);
   return true;
 }
 
 // Time Complexity: O(n)
 // Space Complexity: O(1) Left and Right Pointers take up constant space
 
-console.log(isPalindrome("race car")); //true
+console.log(isPalindrome("r@ac$e _c__a*r+")); //true
 
 module.exports = isPalindrome;
-
-// s = s.toLowerCase().replace(/[\W_]/g, "");
-// let left = 0;
-// let right = s.length - 1;
-// console.log(right, s);
-
-// while (left < right) {
-//   console.log(left, s[left]);
-//   console.log(right, s[right]);
-//   if (s[left] !== s[right]) {
-//     return false;
-//   }
-//   left++;
-//   //left = left + 1
-//   right--;
-//   //right = right - 1
-// }
-// return true;

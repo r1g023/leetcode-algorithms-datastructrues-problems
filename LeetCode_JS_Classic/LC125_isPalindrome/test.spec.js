@@ -8,10 +8,14 @@ test("'love' returns false", () => {
   expect(isPalindrome("love")).toEqual(false);
 });
 
-test("'' returns true", () => {
-  expect(isPalindrome("")).toEqual(true);
+test("`` returns true", () => {
+  expect(isPalindrome("")).toEqual(true); //empty string is a palindrome
 });
 
 test("'_a__' returns true", () => {
   expect(isPalindrome("_a__")).toEqual(true);
+});
+
+test("r@ac$e _c__a*r+ ", () => {
+  expect(isPalindrome("r@ac$e _c__a*r+ ")).toEqual(true);
 });
