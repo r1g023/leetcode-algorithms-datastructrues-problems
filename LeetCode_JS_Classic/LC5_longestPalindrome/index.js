@@ -15,7 +15,7 @@
 
 function longestPalindrome(s) {
   let startIndex = 0;
-  let maxLength = 1;
+  let maxLength = 1; // at least one
 
   function expandAroundMiddle(left, right) {
     while (left >= 0 && right < s.length && s[left] === s[right]) {
