@@ -14,9 +14,10 @@
 // Output: "bb"
 
 function longestPalindrome(s) {
-  let startIndex = 0;
-  let maxLength = 1; // at least one
-
+  let startIndex = 0; // grab longest
+  let maxLength = 1; // longest palindrome has to be at least 1
+  console.log(s);
+  //helper function
   function expandAroundMiddle(left, right) {
     while (left >= 0 && right < s.length && s[left] === s[right]) {
       const currentPalLength = right - left + 1;
@@ -24,17 +25,18 @@ function longestPalindrome(s) {
         maxLength = currentPalLength;
         startIndex = left;
       }
-      left--;
-      right++;
+      left = left - 1;
+      right = right + 1;
     }
   }
 
   for (let i = 0; i < s.length; i++) {
-    expandAroundMiddle(i - 1, i + 1);
-    expandAroundMiddle(i, i + 1);
+    expandAroundMiddle(i - 1, i + 1); // accounts for spaces in between characters
+    expandAroundMiddle((i, i + 1));
   }
-
   return s.slice(startIndex, startIndex + maxLength);
 }
+
+console.log(longestPalindrome("tesannates")); //anna
 
 module.exports = longestPalindrome;
