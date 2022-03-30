@@ -16,27 +16,28 @@
 function longestPalindrome(s) {
   let startIndex = 0; // grab longest
   let maxLength = 1; // longest palindrome has to be at least 1
-  console.log(s);
-  //helper function
+  //expand around the center of string
   function expandAroundMiddle(left, right) {
+    console.log(s[left]);
     while (left >= 0 && right < s.length && s[left] === s[right]) {
-      const currentPalLength = right - left + 1;
-      if (currentPalLength > maxLength) {
-        maxLength = currentPalLength;
+      //only runs if it's valid
+      const currentPalindromeLength = right - left + 1;
+      if (currentPalindromeLength > maxLength) {
+        maxLength = currentPalindromeLength;
         startIndex = left;
       }
-      left = left - 1;
-      right = right + 1;
+      left -= 1;
+      right += 1;
     }
   }
-
   for (let i = 0; i < s.length; i++) {
-    expandAroundMiddle(i - 1, i + 1); // accounts for spaces in between characters
-    expandAroundMiddle((i, i + 1));
+    console.log(i);
+    expandAroundMiddle(i - 1, i + 1);
+    expandAroundMiddle(i, i + 1);
   }
   return s.slice(startIndex, startIndex + maxLength);
 }
 
-console.log(longestPalindrome("tesannates")); //anna
+console.log(longestPalindrome("onelol")); //anna
 
 module.exports = longestPalindrome;
