@@ -14,30 +14,42 @@
 // Output: "bb"
 
 function longestPalindrome(s) {
-  let startIndex = 0; // grab longest
-  let maxLength = 1; // longest palindrome has to be at least 1
-  //expand around the center of string
+  let startIndex = 0;
+  let maxLength = 1;
+
+  //function expandAroundMiddle
   function expandAroundMiddle(left, right) {
-    console.log(s[left]);
     while (left >= 0 && right < s.length && s[left] === s[right]) {
-      //only runs if it's valid
-      const currentPalindromeLength = right - left + 1;
-      if (currentPalindromeLength > maxLength) {
-        maxLength = currentPalindromeLength;
+      console.log(s.length);
+      console.log(left, s[left]);
+      console.log(right, s[right]);
+      //code only runs if we have a valid palindrome
+      const currentPalLength = right - left + 1; //array indece starts at 0, add 1 to compensate
+      console.log(right);
+      console.log(left);
+      console.log(right - left + 1);
+      if (currentPalLength > maxLength) {
+        maxLength = currentPalLength;
+        console.log(maxLength);
         startIndex = left;
+        console.log(left);
       }
-      left -= 1;
-      right += 1;
+      left--;
+      right++;
     }
   }
+
+  //iterate through every character on input string
   for (let i = 0; i < s.length; i++) {
     console.log(i);
+
     expandAroundMiddle(i - 1, i + 1);
-    expandAroundMiddle(i, i + 1);
+    expandAroundMiddle(i, i + 1); // accounts for spaces in between characters
   }
+
   return s.slice(startIndex, startIndex + maxLength);
 }
 
-console.log(longestPalindrome("onelol")); //anna
+longestPalindrome("-racecar_");
 
 module.exports = longestPalindrome;
