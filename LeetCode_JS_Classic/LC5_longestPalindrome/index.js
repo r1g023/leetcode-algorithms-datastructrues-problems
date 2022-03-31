@@ -41,7 +41,7 @@ function longestPalindrome(s) {
 
   //iterate through every character on input string
   for (let i = 0; i < s.length; i++) {
-    console.log(i);
+    console.log("i", i);
 
     expandAroundMiddle(i - 1, i + 1);
     expandAroundMiddle(i, i + 1); // accounts for spaces in between characters
