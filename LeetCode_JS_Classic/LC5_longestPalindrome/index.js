@@ -14,35 +14,33 @@
 // Output: "bb"
 
 const longestPalindrome = (s) => {
-  if (!s || s.length <= 1) return s;
+  console.log(s);
   let startIndex = 0;
   let maxLength = 1;
+
   function expandAroundMiddle(left, right) {
     while (left >= 0 && right < s.length && s[left] === s[right]) {
       const currentPalLength = right - left + 1;
-
       console.log(currentPalLength);
       if (currentPalLength > maxLength) {
         maxLength = currentPalLength;
-        console.log(maxLength);
         startIndex = left;
-        console.log(startIndex);
       }
-
-      console.log(left, s[left], right, s[right]);
       left--;
       right++;
     }
   }
 
   for (let i = 0; i < s.length; i++) {
+    console.log(i);
     expandAroundMiddle(i - 1, i + 1);
     expandAroundMiddle(i, i + 1);
   }
+
   return s.slice(startIndex, startIndex + maxLength);
 };
 
-longestPalindrome("yanaz");
+longestPalindrome("yaaaf");
 
 module.exports = longestPalindrome;
 
