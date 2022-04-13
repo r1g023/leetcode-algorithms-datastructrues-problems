@@ -153,7 +153,7 @@ myArray.splice(1, 0, "Hi"); // at index 1, remove 0 items, but add char 'hi' [ 1
 //indexes could also be a disadvantage for arrays if you are adding something to the beginning, because you will have to reindex everything. If you need to access data by index, arrays are a great data structure but if you're adding/removing items from the beginning perhaps a different data structure will do. You will always base your decision on BIG-0
 console.log(myArray);
 
-//-----------------------------------------------BIG O: Wrap up ------------------------------------------------//
+//-----------------------------------------------BIG O: Wrap up -------------------------------------------------//
 n = 100;
 // o(1)=1  it's constant, N will always equal to O(1)
 // O(log n) = 7, approximately 7 if n is 100, divide and conquer
