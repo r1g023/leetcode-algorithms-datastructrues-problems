@@ -3,7 +3,7 @@
 //2) THETA - Θ
 //3) OMNICRON - BIG O
 
-// 1) Complexity in terms of input size, N
+// 1)  Complexity in terms of input size, N
 // 2) machine-independent complexity
 // 3) basic computer steps
 // 4) time and space
