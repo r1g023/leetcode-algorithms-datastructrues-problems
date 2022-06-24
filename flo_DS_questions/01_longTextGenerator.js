@@ -1,6 +1,12 @@
 // Create a loooong teeeext generator that takes in a string and an integer n, and multiplies the vowels in the string by n.
 // The vowels are a, e, i, o, u.
 // Example:
+// $ longText('hello world', 3) 
+// $ 'heeellooo wooorld'
+
+// $ longText('lol', 10) 
+// $ 'looooooooool'
+
 function longTextGenerator(string, n) {
   let vowels = ["a", "e", "i", "o", "u"];
   let newString = "";
