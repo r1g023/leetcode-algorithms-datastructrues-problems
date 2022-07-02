@@ -19,4 +19,8 @@ function longTextGenerator(string, n) {
   return newString;
 }
 
+//TIME AND SPACE complexity of longTextGenerator:
+// Time: O(n)
+// Space: O(n)
+
 console.log(longTextGenerator("hello", 2));
