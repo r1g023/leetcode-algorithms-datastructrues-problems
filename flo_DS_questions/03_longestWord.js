@@ -7,18 +7,40 @@
 // $ 'apple'
 // "able" and "ale" also work, but are shorter than "apple"
 // "bale" has all the right letters, but not in the right order
-function longestWord(str, dict) {
-  let longest = "";
-  let current = "";
-  for (let i = 0; i < str.length; i++) {
-    current = current + str[i];
-    console.log(current); // abppplee
-    // need to check further...
-  }
-  console.log(longest);
-  return longest;
-}
 
-console.log(
-  longestWord("abppplee", ["able", "ale", "apple", "bale", "kangaroo"])
-);
+function searchString(str, dict) {
+  // sort dictionary by length first
+  dict.sort((a, b) => {
+    let result = b.length - a.length;
+    return result;
+  });
+
+  // verify word in string
+  function hasSubString(word, str) {
+    // check for worst-case scenario first
+    if (word.length === 0) return false;
+
+    let strLength = 0;
+    for (let i = 0; i < word.length; i++) {
+      let index = str.indexOf(word[i], strLength);
+      if (index < 0 || strLength > str.length) {
+        return false;
+      }
+      strLength = index + 1;
+    }
+    return true;
+  }
+
+  // go over array of words, in order of length
+  let longestWord = "";
+  for (let i = 0; i < dict.length; i += 1) {
+    if (hasSubString(dict[i], str)) {
+      longestWord = dict[i];
+    }
+  }
+  console.log(longestWord);
+  return longestWord;
+}
+let dict = ["able", "ale", "apple", "bale", "abpppleee", "kangaroo", "madrid"];
+console.log(searchString("abppplee", dict)); // ale
+console.log(searchString("rigmadoriggd", dict)); // madrid
