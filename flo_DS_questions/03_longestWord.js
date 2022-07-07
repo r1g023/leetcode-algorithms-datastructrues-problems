@@ -11,7 +11,7 @@
 function searchString(str, dict) {
   // sort dictionary by length first
   dict.sort((a, b) => {
-    let result = b.length - a.length;
+    let result = a.length - b.length;
     return result;
   });
 
