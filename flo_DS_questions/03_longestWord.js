@@ -42,5 +42,5 @@ function searchString(str, dict) {
   return longestWord;
 }
 let dict = ["able", "ale", "apple", "bale", "abpppleee", "kangaroo", "madrid"];
-console.log(searchString("abppplee", dict)); // ale
+console.log(searchString("abppplee", dict)); // apple
 console.log(searchString("rigmadoriggd", dict)); // madrid
