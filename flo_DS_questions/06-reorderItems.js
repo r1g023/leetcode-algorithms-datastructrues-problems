@@ -13,12 +13,8 @@ function reorder(a, b) {
   for (let i = 0; i < a.length; i++) {
     result[b[i]] = a[i];
   }
-
-  for (let i = 0; i < a.length; i++) {
-    a[i] = result[i];
-  }
+  console.log(result); // [D, F, G, C, E, H]
+  return result;
 }
 
-reorder(a, b);
-
-console.log(a); // [D, F, G, C, E, H]
+console.log(reorder(a, b));
