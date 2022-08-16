@@ -18,3 +18,4 @@ function reorder(a, b) {
 }
 
 console.log(reorder(a, b));
+console.log(a)
