@@ -34,3 +34,26 @@ console.log(getMaxProfit(stockPrices)); // 6
 
 let secondStockPrices = [11, 5, 7, 2, 9, 10];
 console.log(getMaxProfit(secondStockPrices)); // 8
+
+////////////////////////////////////////////////////////////////////////////////
+// second approach with only one loop
+function getMaxProfit2(stockPrices) {
+  let buy = stockPrices[0];
+  let sell = stockPrices[0];
+
+  for (let i = 0; i < stockPrices.length; i++) {
+    if (stockPrices[i] < buy) {
+      buy = stockPrices[i];
+      console.log(buy); // 5
+    }
+
+    if (stockPrices[i] > sell) {
+      sell = stockPrices[i];
+      console.log(sell); // 11
+    }
+  }
+
+  return sell - buy;
+}
+
+console.log(getMaxProfit2(stockPrices)); // 6
