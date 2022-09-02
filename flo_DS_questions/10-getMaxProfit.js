@@ -24,9 +24,13 @@ function getMaxProfit(stockPrices) {
       }
     }
   }
-  console.log(maxProfit); // 6
+  console.log(maxProfit); // 6, 8
+
   return maxProfit;
 }
 
 let stockPrices = [10, 7, 5, 8, 11, 9];
-console.log(getMaxProfit(stockPrices)); // returns 6 (buying for $5 and selling for $11)
+console.log(getMaxProfit(stockPrices)); // 6
+
+let secondStockPrices = [11, 5, 7, 2, 9, 10];
+console.log(getMaxProfit(secondStockPrices)); // 8
