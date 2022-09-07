@@ -38,22 +38,21 @@ console.log(getMaxProfit(secondStockPrices)); // 8
 ////////////////////////////////////////////////////////////////////////////////
 // second approach with only one loop
 function getMaxProfit2(stockPrices) {
-  let buy = stockPrices[0];
+  let buy = 0;
   let sell = stockPrices[0];
 
   for (let i = 0; i < stockPrices.length; i++) {
-    if (stockPrices[i] < buy) {
-      buy = stockPrices[i];
-      console.log(buy); // 5
-    }
+    let result = stockPrices[i];
+    console.log(result);
+    if (result < sell) sell = result;
 
-    if (stockPrices[i] > sell) {
-      sell = stockPrices[i];
-      console.log(sell); // 11
-    }
+    let newProfit = result - sell;
+    console.log(newProfit); // 0,0,0,3,6,4 --- // 0,0,2,0,7,8 --> max 6 & 8
+    buy = Math.max(buy, newProfit);
   }
 
-  return sell - buy;
+  return buy;
 }
 
 console.log(getMaxProfit2(stockPrices)); // 6
+console.log(getMaxProfit2(secondStockPrices)); // 8
