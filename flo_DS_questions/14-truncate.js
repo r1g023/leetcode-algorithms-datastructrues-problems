@@ -30,3 +30,27 @@ function truncate(myString, n) {
 
 console.log(truncate("never gonna give you up", n)); // nev gon giv you up
 console.log(truncate("*hello* darkness, my ~old_friend", n)); //  *he dar my ~ol
+
+// second approach including special characters
+function truncate2(myString, n) {
+  let words = myString.split(" ");
+  let result = [];
+  let regex = /[_*~,]/;
+
+  words.forEach((item) => {
+    let specialChar = "";
+    if (regex.test(item)) {
+      specialChar = item.match(regex);
+    }
+    if (item.length > n) {
+      result.push(item.slice(0, n) + specialChar);
+    } else {
+      result.push(item);
+    }
+  });
+  console.log(result);
+  return result.join(" ");
+}
+
+console.log(truncate2("never gonna give you up", n)); // nev gon giv you up
+console.log(truncate2("*hello* darkness, my ~old_friend", n)); // *he* dar, my ~ol~
