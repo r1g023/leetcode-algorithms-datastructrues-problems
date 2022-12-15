@@ -26,4 +26,4 @@ function passDoors(n, numberOfPasses) {
   return result.length;
 }
 
-console.log(passDoors(7, 3));
+console.log(passDoors(7, 3)); // 4
