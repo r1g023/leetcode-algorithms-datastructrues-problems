@@ -52,5 +52,5 @@ function fibLike(array) {
 let array = [1, 20, 21, 41, 100];
 let array2 = [10, 20, 30, 50, 80];
 
-console.log(fibLike(array));
-console.log(fibLike(array2));
+console.log(fibLike(array)); // false
+console.log(fibLike(array2)); // true 
