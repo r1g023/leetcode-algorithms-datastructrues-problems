@@ -37,20 +37,20 @@ console.log(fibLike(3, 7, 5)); // [ 3, 7, 10, 17, 27 ]
 
 // determine if the sequence is “fibonacci-like”.
 
-let array = [1, 20, 21];
 function fibLike(array) {
-  for (let i = 0; i < array.length; i++) {
-    for (let i = 0; i < array.length; i++) {
-      if (array[i] + array[i + 1] === array[i + 2]) {
-        console.log(array[i]); // 1
-        console.log(array[i + 1]); // 20
-        console.log(array[i + 2]); // 21
-        // 1 + 20 = 21
-        return true;
-      }
+  for (let i = 2; i < array.length; i++) {
+    console.log(array[i]);
+    console.log(array[i - 1] + array[i - 2]);
+    if (array[i] !== array[i - 1] + array[i - 2]) {
+      return false;
     }
-    return false;
   }
+
+  return true;
 }
 
-console.log(fibLike(array)); // true
+let array = [1, 20, 21, 41, 100];
+let array2 = [10, 20, 30, 50, 80];
+
+console.log(fibLike(array));
+console.log(fibLike(array2));
