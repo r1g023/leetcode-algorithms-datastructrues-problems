@@ -53,4 +53,8 @@ let array = [1, 20, 21, 41, 100];
 let array2 = [10, 20, 30, 50, 80];
 
 console.log(fibLike(array)); // false
+<<<<<<< HEAD
 console.log(fibLike(array2)); // true
+=======
+console.log(fibLike(array2)); // true 
+>>>>>>> 8d6f18101f896d5cc4cd5a75cedc0f6153686fad
