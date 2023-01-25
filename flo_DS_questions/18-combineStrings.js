@@ -13,10 +13,16 @@ function combineStrings(arr, n) {
   let currentString = "";
   let result = [];
 
-  //   worst case scenario
-  if (arr.length <= 1) {
+  // worst case scenario
+
+  // worse case scenario if no array is passed or something other than an array is passed
+  if (!Array.isArray(arr)) {
     return false;
   }
+
+  // if (arr.length <= 1) {
+  //   return false;
+  // }
 
   arr.forEach((item) => {
     // console.log(currentString.length);
@@ -39,9 +45,11 @@ let testArray = ["a", "b", "c", "d", "e", "f", "g"];
 let testArray2 = ["alpha", "beta", "gamma", "delta", "epsilon"];
 let testArray3 = ["rigo"]; // worst case scenario test
 let testArray4 = [""]; // worst case scenario test
+let emptyArray = []; // worst case scenario test
 
 console.log(combineStrings(testArray, 5)); // [ 'a b, c', 'd e f', 'g' ]
 console.log(combineStrings(testArray, 12)); // [ 'a b c d e', 'g' ]
 console.log(combineStrings(testArray2, 20)); // [ 'alpha beta gamma', 'delta epsilon' ]
 console.log(combineStrings(testArray3, 5)); // false
 console.log(combineStrings(testArray4, 5)); // false
+console.log(combineStrings(emptyArray, 5)); // false
