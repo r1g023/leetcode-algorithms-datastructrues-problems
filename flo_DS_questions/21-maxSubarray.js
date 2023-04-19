@@ -43,4 +43,4 @@ console.log(maxSubarray([-4, 2, -5, 1, 2, 3, 6, -5, 1], 4)); // [1,2,3,6]
 
 console.log(maxSubarray([1, 2, 0, 5], 2)); // [0,5]
 
-console.log(maxSubarray([1, 2, 3], 4)); // Error: 4 is greater than the length of the array
+console.log(maxSubarray([1, 2, 3], 4)); //  You're tweaking, 4 is greater than the length of the array
